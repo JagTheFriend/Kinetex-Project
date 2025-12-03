@@ -30,14 +30,20 @@ const Index = () => {
 			<Header />
 
 			<Activity mode={isError ? "visible" : "hidden"}>
-				<CustomError />
+				<main className="container mx-auto px-4">
+					<CustomError />
+				</main>
 			</Activity>
 
 			<Activity mode={isLoading ? "visible" : "hidden"}>
-				<Skeletons />
+				<main className="container mx-auto px-4 py-8">
+					<Skeletons />
+				</main>
 			</Activity>
 
-			<Activity mode={isLoading ? "hidden" : "visible"}>
+			<Activity
+				mode={isLoading && newsArticles.length === 0 ? "hidden" : "visible"}
+			>
 				<main className="container mx-auto px-4 py-8">
 					<NewsGrid articles={newsArticles} />
 				</main>
