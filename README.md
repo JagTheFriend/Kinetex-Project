@@ -1,4 +1,4 @@
-# Project Summary:
+# NEUZ
 
 A modern News Web App that displays articles in a card-style layout.\
 Built completely using React for structure, TailwindCSS for styling, and TypeScript for functionality.

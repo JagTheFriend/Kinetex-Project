@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import type { NewsArticle } from "@/data/newsData";
+import { cn } from "@/lib/utils";
 import NewsCard from "./NewsCard";
 import Pagination from "./Pagination";
 
@@ -33,11 +34,11 @@ const NewsGrid = ({ articles }: NewsGridProps) => {
 	return (
 		<div className="flex flex-col gap-4">
 			<div
-				className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300 ease-out ${
-					isTransitioning
-						? "opacity-0 translate-y-4"
-						: "opacity-100 translate-y-0"
-				}`}
+				className={cn(
+					`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300 ease-out`,
+					isTransitioning && "opacity-0 translate-y-4",
+					!isTransitioning && "opacity-100 translate-y-0",
+				)}
 			>
 				{currentArticles.map((article) => (
 					<NewsCard key={article.id} article={article} />
