@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Button } from "@/components/ui/button";
 import type { NewsArticle } from "@/data/newsData";
 
@@ -14,7 +15,7 @@ const NewsCard = ({ article }: NewsCardProps) => {
 	return (
 		<article className="group flex flex-col overflow-hidden rounded-lg bg-card card-shadow transition-all duration-300 hover:card-shadow-hover border-2 hover:scale-105 cursor-default">
 			<div className="relative aspect-16/10 overflow-hidden">
-				<img
+				<LazyLoadImage
 					src={article.imageUrl}
 					alt={article.title}
 					className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
