@@ -26,8 +26,8 @@ const Index = () => {
 	}, []);
 
 	return (
-		<div className="min-h-screen bg-background">
-			<main className="container mx-auto py-4 border-0 gap-4 flex flex-col w-full h-full">
+		<div className="min-h-screen bg-background flex flex-col">
+			<main className="container mx-auto py-4 border-0 gap-4 flex flex-col w-full h-full grow">
 				<Header />
 				{isError ? <CustomError /> : null}
 				{isLoading && !isError ? (
